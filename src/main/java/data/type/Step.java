@@ -45,10 +45,11 @@ public class Step {
     }
     @Override
     public String toString() {
-        String result = number + ". " + stepTitle + "\n" + stepDescription + "\n";
+        StringBuilder result = new StringBuilder(number + ". " + stepTitle + "\n" + stepDescription);
+        result.append("Image URLs:\n");
         for (String url : imageURLs) {
-            result = result + "- " + url + "\n";
+            result.append("- ").append(url).append("\n");
         }
-        return result;
+        return result.toString();
     }
 }

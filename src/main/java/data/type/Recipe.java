@@ -61,6 +61,9 @@ public class Recipe {
     public void setSteps(ArrayList<Step> steps) {
         this.steps = steps;
     }
+    public void addStep(Step step) {
+        steps.add(step);
+    }
 
     @Override
     public String toString() {

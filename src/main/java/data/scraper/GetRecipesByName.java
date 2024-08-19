@@ -28,6 +28,8 @@ public class GetRecipesByName {
             DomNodeList<DomNode> recipesList = page.querySelectorAll("body > section > div > ul > li");
             for (DomNode recipe : recipesList) {
                 String title = recipe.querySelector("div > a > strong").getTextContent().trim();
+                if (title.charAt(0) >= '0' && title.charAt(0) <= '9')
+                    continue;
                 String link = "https://www.dienmayxanh.com" + recipe.querySelector("a").getAttributes().getNamedItem("href").getNodeValue();
                 String totalView = recipe.querySelector("div > div > small:nth-child(2)").getTextContent().trim();
                 recipeList.add(new RecipeTitle(title, link, totalView));
@@ -68,8 +70,6 @@ public class GetRecipesByName {
         Recipe recipe = new Recipe();
         try {
             HtmlPage page = webClient.getPage(recipeTitle.getUrl());
-//            DomNode pageNode = page.querySelector("body > section > div.detail");
-//            System.out.println(pageNode.asNormalizedText().replaceAll("\\*", ""));
 
             DomNode preparationNode = page.querySelector("#tongquan > ul > li:nth-child(1) > span");
             DomNode processingNode = page.querySelector("#tongquan > ul > li:nth-child(2) > span");
@@ -90,7 +90,6 @@ public class GetRecipesByName {
             for (DomNode stepNode : steps) {
                 Step step = new Step();
 
-                System.out.println(stepNode.asXml());
 
                 step.setNumber(Integer.parseInt(stepNode.querySelector("label").getTextContent().trim()));
 
@@ -103,12 +102,13 @@ public class GetRecipesByName {
                 }
                 step.setStepDescription(desc.toString());
 
-//                DomNodeList<DomNode> gallery = stepNode.querySelectorAll("div > div > div");
-//                for (DomNode node : gallery) {
-//                    DomNode imgNode = node.querySelector("img");
-//                    String imgURL = imgNode.getAttributes().getNamedItem("data-src").getNodeValue();
-//                    step.addImageURL(imgURL);
-//                }
+                DomNodeList<DomNode> gallery = stepNode.querySelectorAll("div > div > div");
+                for (DomNode node : gallery) {
+                    DomNode imgNode = node.querySelector("img");
+                    String imgURL = imgNode.getAttributes().getNamedItem("data-src").getNodeValue();
+                    step.addImageURL(imgURL);
+                }
+                recipe.addStep(step);
             }
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
@@ -122,6 +122,9 @@ public class GetRecipesByName {
         for (RecipeTitle recipeTitle : recipeList) {
             System.out.println(recipeTitle);
         }
-        System.out.println(getRecipe(recipeList.get(1)));
+//        System.out.println(getRecipe(recipeList.get(3)));
+        for (RecipeTitle recipeTitle : recipeList) {
+            System.out.println(getRecipe(recipeTitle));
+        }
     }
 }
