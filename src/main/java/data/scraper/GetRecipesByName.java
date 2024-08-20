@@ -28,7 +28,7 @@ public class GetRecipesByName {
             DomNodeList<DomNode> recipesList = page.querySelectorAll("body > section > div > ul > li");
             for (DomNode recipe : recipesList) {
                 String title = recipe.querySelector("div > a > strong").getTextContent().trim();
-                if (title.charAt(0) >= '0' && title.charAt(0) <= '9')
+                if (title.charAt(0) != 'C')
                     continue;
                 String link = "https://www.dienmayxanh.com" + recipe.querySelector("a").getAttributes().getNamedItem("href").getNodeValue();
                 String totalView = recipe.querySelector("div > div > small:nth-child(2)").getTextContent().trim();
