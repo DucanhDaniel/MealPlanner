@@ -1,0 +1,56 @@
+#searchTextField {
+    -fx-border-radius: 20px;
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #fd3eacff 0.0%, #7a4ba2ff 50.0%, #2d87c5ff 100.0%);
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+}
+#title {
+    -fx-text-fill: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1c84ecff 0.0%, #ad0decff 100.0%);
+    -fx-background-repeat: repeat;
+    -fx-padding: 10px; /* Add some padding */
+}
+#pane1 {
+    -fx-border-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1c84ecff 0.0%, #ad0decff 100.0%);
+
+}
+#pane2 {
+    -fx-border-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1c84ecff 0.0%, #ad0decff 100.0%);
+
+}
+#pane3 {
+    -fx-border-radius: 15px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1c84ecff 0.0%, #ad0decff 100.0%);
+
+}
+.button {
+    -fx-background-color: transparent;
+}
+
+#browseBtn1, #browseBtn2, #browseBtn3, #moreBtn {
+    -fx-border-style: solid;
+    -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #1a2d6dff 0.0%, #b11f1eff 50.0%, #fcba2eff 100.0%);
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-cursor: hand;
+
+    -fx-background-color: transparent;
+}
+#browseBtn1:hover, #browseBtn2:hover, #browseBtn3:hover, #moreBtn:hover {
+     -fx-background-radius: 20px;
+     -fx-background-color: rgba(0, 0, 0, 0.1);
+}
+#browseBtn1:armed, #browseBtn2:armed, #browseBtn3:armed, #moreBtn:armed {
+      -fx-background-radius: 20px;
+      -fx-background-color: rgba(0, 0, 0, 0.2);
+}
+
+

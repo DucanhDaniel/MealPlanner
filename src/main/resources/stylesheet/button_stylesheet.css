@@ -1,0 +1,29 @@
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-transition: background-color 0.3s ease, -fx-effect 0.3s ease;
+}
+
+.button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 0);
+}
+
+.button:armed {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 10, 0.5, 0, 0);
+}
+#vbox {
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #accafdff 0.0%, #febeebff 100.0%);
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px 2px 2px 2px;
+}
+#hbox {
+    -fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #f0f0f0ff 0.0%, #e0e0e0ff 100.0%);
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #ccccccff;
+    -fx-padding: 0 10px;
+}
