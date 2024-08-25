@@ -213,7 +213,7 @@
         </VBox>
     </left>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../../stylesheet/recipe_show.css" BorderPane.alignment="CENTER">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1210.0" prefWidth="893.0">
                <children>
@@ -271,7 +271,7 @@
                         </Pane>
                      </children>
                   </HBox>
-                  <Pane layoutX="47.0" layoutY="223.0" prefHeight="346.0" prefWidth="793.0" style="-fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #fa00fdff 0.0%, #02dcddff 100.0%); -fx-border-style: solid; -fx-border-width: 2px; -fx-border-radius: 20;">
+                  <Pane layoutX="47.0" layoutY="223.0" prefHeight="351.0" prefWidth="793.0" style="-fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #fa00fdff 0.0%, #02dcddff 100.0%); -fx-border-style: solid; -fx-border-width: 2px; -fx-border-radius: 20;">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="174.0" text="Nguyên liệu làm">
                            <font>
@@ -283,13 +283,18 @@
                               <Font name="Cambria Bold" size="23.0" />
                            </font>
                         </Label>
-                        <Label fx:id="listIngredientsLabel" alignment="TOP_LEFT" layoutX="34.0" layoutY="63.0" prefHeight="255.0" prefWidth="725.0" text="List of ingredients">
-                           <font>
-                              <Font name="Cambria" size="21.0" />
-                           </font></Label>
+                        <ScrollPane layoutX="34.0" layoutY="63.0" prefViewportHeight="258.0" prefViewportWidth="722.0">
+                           <content>
+                              <Label fx:id="listIngredientsLabel" alignment="TOP_LEFT" layoutX="34.0" layoutY="63.0" prefHeight="524.0" prefWidth="722.0" text="List of ingredients" wrapText="true">
+                                 <font>
+                                    <Font name="Cambria" size="21.0" />
+                                 </font>
+                              </Label>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </Pane>
-                  <Pane layoutX="39.0" layoutY="613.0" prefHeight="568.0" prefWidth="816.0" style="-fx-border-color: black; -fx-border-radius: 30px; -fx-border-width: 3px;">
+                  <Pane layoutX="39.0" layoutY="635.0" prefHeight="568.0" prefWidth="816.0" style="-fx-border-color: black; -fx-border-radius: 30px; -fx-border-width: 3px;">
                      <children>
                         <Label alignment="CENTER" layoutY="14.0" prefHeight="32.0" prefWidth="816.0" text="Phương pháp chế biến">
                            <font>
@@ -300,15 +305,15 @@
                            <children>
                               <Pane>
                                  <children>
-                                    <Pane layoutX="1.0" layoutY="1.0">
-                                       <children>
-                                          <Label fx:id="stepTextLabel" alignment="CENTER" layoutX="10.0" prefHeight="217.0" prefWidth="718.0" text="Bắc lên bếp 1 cái chảo, đun nóng 3 muỗng canh dầu ăn. Khi dầu nóng cho vào 3 muỗng cà phê mắm tép, đảo đều rồi thêm vào 2 muỗng canh đường. Tiếp tục đảo đều một cách nhẹ nhàng với lửa nhỏ.Khi đường tan cho hết phần gốc hành, ớt đập dập, hành tím và tỏi băm nhỏ vào, xào đều. Thêm thịt ba chỉ đã được ướp trước đó, 200ml nước dừa vào chảo sao cho nước vừa ngập mặt thịt là được, trộn đều nguyên liệu lại với nhau.Đậy nắp và kho với lửa nhỏ khoảng 5 phút, khi thịt chín rắc hành lá băm nhỏ lên trên là có thể tắt bếp." wrapText="true">
+                                    <ScrollPane layoutX="11.0" layoutY="1.0" prefHeight="187.0" prefViewportHeight="217.0" prefViewportWidth="718.0" prefWidth="720.0" stylesheets="@../../stylesheet/recipe_show.css">
+                                       <content>
+                                          <Label fx:id="stepTextLabel" alignment="TOP_LEFT" layoutX="10.0" prefHeight="325.0" prefWidth="697.0" text="Bắc lên bếp 1 cái chảo, đun nóng 3 muỗng canh dầu ăn. Khi dầu nóng cho vào 3 muỗng cà phê mắm tép, đảo đều rồi thêm vào 2 muỗng canh đường. Tiếp tục đảo đều một cách nhẹ nhàng với lửa nhỏ.Khi đường tan cho hết phần gốc hành, ớt đập dập, hành tím và tỏi băm nhỏ vào, xào đều. Thêm thịt ba chỉ đã được ướp trước đó, 200ml nước dừa vào chảo sao cho nước vừa ngập mặt thịt là được, trộn đều nguyên liệu lại với nhau.Đậy nắp và kho với lửa nhỏ khoảng 5 phút, khi thịt chín rắc hành lá băm nhỏ lên trên là có thể tắt bếp." wrapText="true">
                                              <font>
                                                 <Font name="Cambria" size="18.0" />
                                              </font>
                                           </Label>
-                                       </children>
-                                    </Pane>
+                                       </content>
+                                    </ScrollPane>
                                     <Pane layoutX="1.0" layoutY="218.0" prefHeight="187.0" prefWidth="735.0">
                                        <children>
                                           <ImageView fx:id="image1" fitHeight="188.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true" />
@@ -326,16 +331,16 @@
                               <Font name="Cambria" size="28.0" />
                            </font>
                         </Label>
-                        <Label fx:id="stepNameLabel" layoutX="83.0" layoutY="53.0" prefHeight="40.0" prefWidth="311.0" text="Step name">
+                        <Label fx:id="stepNameLabel" layoutX="83.0" layoutY="53.0" prefHeight="40.0" prefWidth="674.0" text="Step name">
                            <font>
                               <Font name="Cambria" size="28.0" />
                            </font>
                         </Label>
-                        <ImageView fx:id="previousImg" fitHeight="40.0" fitWidth="48.0" layoutX="683.0" layoutY="514.0" onMouseClicked="#handlePrevious" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="previousImg" fitHeight="40.0" fitWidth="48.0" layoutX="683.0" layoutY="514.0" onMouseClicked="#handlePrevious" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                            <image>
                               <Image url="@../../images/previous.png" />
                            </image></ImageView>
-                        <ImageView fx:id="nextImg" fitHeight="40.0" fitWidth="48.0" layoutX="737.0" layoutY="514.0" onMouseClicked="#handleNext" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="nextImg" fitHeight="40.0" fitWidth="48.0" layoutX="737.0" layoutY="514.0" onMouseClicked="#handleNext" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                            <image>
                               <Image url="@../../images/next.png" />
                            </image>

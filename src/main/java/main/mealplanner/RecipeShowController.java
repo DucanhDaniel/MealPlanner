@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static java.lang.Math.min;
+
 public class RecipeShowController extends HomePageController {
     public Label recipeNameLabel1;
     public Label recipeNameLabel2;
@@ -35,6 +37,7 @@ public class RecipeShowController extends HomePageController {
     public Label preparationTime;
     public Label processingTime;
     public Label difficulty;
+    public Label listIngredientsLabel1;
 
     @FXML
     public void initialize() {
@@ -68,11 +71,14 @@ public class RecipeShowController extends HomePageController {
         processingTime.setText(recipe.getProcessingTime());
         difficulty.setText(recipe.getDifficulty());
 
+        ArrayList<Ingredient> ingredients = recipe.getIngredients();
+
         StringBuilder stringBuilder = new StringBuilder();
-        for (Ingredient ingredient : recipe.getIngredients()) {
-            stringBuilder.append("• ").append(ingredient.toString()).append("\n");
-        }
+        for (Ingredient ingredient : ingredients) {
+            stringBuilder.append("• ").append(ingredient.toString()).append("\n");}
         listIngredientsLabel.setText(stringBuilder.toString());
+
+
         pushStepData(1, steps.getFirst());
         previousImg.setVisible(false);
     }
@@ -83,9 +89,13 @@ public class RecipeShowController extends HomePageController {
         stepTextLabel.setText(step.getStepDescription());
         ArrayList<String> urls = step.getImageURLs();
         if (!urls.isEmpty()) setImageUrl(urls.getFirst(), image1);
+        else image1.setImage(null);
         if (urls.size() >= 2) setImageUrl(urls.get(1), image2);
+        else image2.setImage(null);
         if (urls.size() >= 3) setImageUrl(urls.get(2), image3);
+        else image3.setImage(null);
         if (urls.size() >= 4) setImageUrl(urls.get(3), image4);
+        else image4.setImage(null);
 
     }
     public void setImageUrl(String url, ImageView imageView) {
