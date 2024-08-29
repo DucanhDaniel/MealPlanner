@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="782.0" prefWidth="1130.0" stylesheets="@../../stylesheet/button_stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.mealplanner.NutritionSearchController">
+    <top>
+        <HBox fx:id="hbox" prefHeight="63.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="63.0" prefWidth="234.0">
+                    <children>
+                        <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="49.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/menu.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="MenuBtn" mnemonicParsing="false" prefHeight="63.0" prefWidth="234.0" style="-fx-cursor: hand; -fx-background-color: transparent;" stylesheets="@../../stylesheet/button_stylesheet.css" text="    Menu">
+                            <font>
+                                <Font name="Cambria" size="25.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane layoutX="10.0" layoutY="10.0" prefHeight="63.0" prefWidth="234.0">
+                    <children>
+                        <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="49.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/export.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="ExportBtn" mnemonicParsing="false" prefHeight="63.0" prefWidth="234.0" style="-fx-cursor: hand; -fx-background-color: transparent;" stylesheets="@../../stylesheet/button_stylesheet.css" text="    Export">
+                            <font>
+                                <Font name="Cambria" size="25.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane layoutX="254.0" layoutY="10.0" prefHeight="63.0" prefWidth="234.0" />
+                <Pane layoutX="488.0" layoutY="10.0" prefHeight="63.0" prefWidth="234.0" />
+                <Pane layoutX="722.0" layoutY="10.0" prefHeight="61.0" prefWidth="173.0">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="29.0" layoutX="74.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/exit.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="ExitBtn" mnemonicParsing="false" prefHeight="63.0" prefWidth="176.0" style="-fx-cursor: hand; -fx-background-color: transparent;" stylesheets="@../../stylesheet/button_stylesheet.css" text="               Exit">
+                            <font>
+                                <Font name="Cambria" size="25.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox fx:id="vbox" prefHeight="729.0" prefWidth="234.0" stylesheets="@../../stylesheet/button_stylesheet.css" BorderPane.alignment="CENTER">
+            <children>
+                <Pane prefHeight="56.0" prefWidth="226.0">
+                    <children>
+                        <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/extend.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="PlanBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="226.0" text="           Plan">
+                            <font>
+                                <Font name="Cambria" size="21.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <VBox fx:id="planListVBox" prefHeight="407.0" prefWidth="230.0">
+                    <children>
+                        <Pane prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="NutritionTargetBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#NutritionTargetBtnClicked" prefHeight="45.0" prefWidth="226.0" text="Nutrition target" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="MondayBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#MondayBtnClicked" prefHeight="45.0" prefWidth="226.0" text="Monday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="55.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="TuesdayBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Tuesday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="100.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="Wednesday" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Wednesday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="145.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="ThursdayBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Thursday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="190.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="FridayBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Friday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="235.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="SaturdayBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Saturday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="280.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="SundayBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Sunday">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="325.0" prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="IngredientsListBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Ingredients list">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+                <Pane layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="226.0">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="28.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/search.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="SearchBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="226.0" text="           Search">
+                            <font>
+                                <Font name="Cambria" size="21.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+                <VBox prefHeight="92.0" prefWidth="226.0">
+                    <children>
+                        <Pane prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="SearchRecipesBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" text="Search recipes">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="45.0" prefWidth="226.0">
+                            <children>
+                                <Button fx:id="SearchDishNutritionBtn" alignment="CENTER" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="226.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" text="Search dish nutrition">
+                                    <font>
+                                        <Font name="Cambria" size="21.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </Pane>
+                    </children>
+                </VBox>
+                <Pane layoutX="10.0" layoutY="428.0" prefHeight="56.0" prefWidth="226.0">
+                    <children>
+                        <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/barcode.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="BarcodeBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="1.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="226.0" text="           Barcode">
+                            <font>
+                                <Font name="Cambria" size="21.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </VBox>
+    </left>
+   <center>
+      <ScrollPane prefViewportHeight="719.0" prefViewportWidth="904.0">
+         <content>
+            <AnchorPane prefHeight="839.0" prefWidth="904.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutY="22.0" prefHeight="49.0" prefWidth="898.0" text="Search dish nutrition">
+                     <font>
+                        <Font name="Century Gothic" size="27.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="CENTER" layoutX="74.0" layoutY="83.0" prefHeight="37.0" prefWidth="755.0" promptText="Insert dish name" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-border-color: linear-gradient(from 0.0% 0.0% to 100.0% 0.0%, #2f8df3ff 0.0%, #00eeffff 100.0%); -fx-border-width: 3px;">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="138.0" prefHeight="49.0" prefWidth="898.0" text="Or insert dish's ingredients ">
+                     <font>
+                        <Font name="Century Gothic" size="27.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addTextFieldButton" layoutX="435.0" layoutY="562.0" mnemonicParsing="false" onAction="#handleAddTextFieldButtonClick" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 15px; -fx-border-radius: 15px;" text="Add ingredient">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                  </Button>
+                    <ScrollPane fx:id="dynamicContainer" hbarPolicy="NEVER" layoutX="164.0" layoutY="199.0" prefHeight="345.0" prefWidth="570.0" stylesheets="@../../stylesheet/nutrition_search.css" vbarPolicy="AS_NEEDED">
+                       <content>
+                           <VBox fx:id="dynamicContent" />
+                       </content>
+                    </ScrollPane>
+                  <Button fx:id="doneBtn" layoutX="641.0" layoutY="562.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 15px; -fx-border-radius: 15px;" text="Done!">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                  </Button>
+                  <Pane layoutX="117.0" layoutY="625.0" prefHeight="306.0" prefWidth="693.0" style="-fx-border-color: black; -fx-border-radius: 20px;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="181.0" layoutY="14.0" prefHeight="55.0" prefWidth="331.0" text="Total nutrition" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="34.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="69.0" layoutY="69.0" prefHeight="55.0" prefWidth="164.0" text="Calories:" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="69.0" layoutY="124.0" prefHeight="55.0" prefWidth="164.0" text="Protein:" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="45.0" layoutY="179.0" prefHeight="55.0" prefWidth="188.0" text="Carbohydrates:" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="69.0" layoutY="234.0" prefHeight="55.0" prefWidth="164.0" text="Fats:" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="caloriesValue" layoutX="243.0" layoutY="69.0" prefHeight="55.0" prefWidth="151.0" text="value" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="proteinValue" layoutX="243.0" layoutY="124.0" prefHeight="55.0" prefWidth="151.0" text="value" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="carbValue" layoutX="243.0" layoutY="179.0" prefHeight="55.0" prefWidth="151.0" text="value" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="fatsValue" layoutX="243.0" layoutY="234.0" prefHeight="55.0" prefWidth="151.0" text="value" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="caloriesPercentage" layoutX="399.0" layoutY="69.0" prefHeight="55.0" prefWidth="328.0" text="= % daily target" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="proteinPercentage" layoutX="399.0" layoutY="124.0" prefHeight="55.0" prefWidth="328.0" text="= % daily target" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="carbPercentage" layoutX="399.0" layoutY="179.0" prefHeight="55.0" prefWidth="328.0" text="= % daily target" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="fatsPercentage" layoutX="399.0" layoutY="234.0" prefHeight="55.0" prefWidth="328.0" text="= % daily target" textAlignment="CENTER">
+                           <font>
+                              <Font name="Cambria" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

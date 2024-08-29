@@ -62,7 +62,7 @@ public class GetRecipesByName {
         webClient.close();
         return recipeList;
     }
-    static String[] listWords = {"thơm", "ngon", "giòn", "cực", "đậm", "đơn", "chuẩn", "bằng"};
+    static String[] listWords = {"thơm", "ngon", "giòn", "cực", "đậm", "đơn", "chuẩn", "bằng", "siêu"};
     public static String getRecipeName(String recipe)  {
         for (String listWord : listWords)
             if (recipe.contains(listWord)) {

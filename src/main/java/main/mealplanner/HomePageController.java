@@ -24,6 +24,7 @@ import java.util.Objects;
 
 import static main.mealplanner.FridayController.switchToFridayPage;
 import static main.mealplanner.MondayController.switchToMondayPage;
+import static main.mealplanner.NutritionSearchController.switchToSearchDishNutritionPage;
 import static main.mealplanner.NutritionTargetController.switchToNutritionTargetPage;
 import static main.mealplanner.SaturdayController.switchToSaturdayPage;
 import static main.mealplanner.SearchRecipesController.switchToSearchRecipesPage;
@@ -84,8 +85,15 @@ public class HomePageController {
         SundayBtn.setOnAction(this::SundayBtnClicked);
         ExportBtn.setOnAction(this::ExportBtnClicked);
         SearchRecipesBtn.setOnAction(this::SearchRecipesBtnClicked);
+        SearchDishNutritionBtn.setOnAction(this::SearchDishNutritionBtnClicked);
     }
-
+    public void SearchDishNutritionBtnClicked(ActionEvent event) {
+        try {
+            switchToSearchDishNutritionPage(event);
+        } catch (IOException e) {
+            System.out.println("Error switching to search nutrition page: " + e.getMessage());
+        }
+    }
 
     public void NutritionTargetBtnClicked(ActionEvent event) {
         try {

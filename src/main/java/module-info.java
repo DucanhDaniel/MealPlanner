@@ -1,7 +1,6 @@
 module main.mealplanner {
     requires javafx.controls;
     requires javafx.fxml;
-    requires jfoenix;
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
