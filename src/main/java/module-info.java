@@ -8,7 +8,8 @@ module main.mealplanner {
     requires htmlunit;
     requires java.desktop;
     opens main.mealplanner to javafx.fxml;
-    exports main.mealplanner;
     exports data.scraper;
     opens data.scraper to javafx.fxml;
+    exports mealplanner;
+    opens mealplanner to javafx.fxml;
 }
