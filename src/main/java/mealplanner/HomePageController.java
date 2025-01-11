@@ -55,7 +55,7 @@ public class HomePageController {
 
     public static void switchToHomePage(ActionEvent event) throws IOException {
         // TODO: Switch to home page
-        Parent root = FXMLLoader.load(Objects.requireNonNull(HomePageController.class.getResource("home_page.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(HomePageController.class.getResource("/main/mealplanner/home_page.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

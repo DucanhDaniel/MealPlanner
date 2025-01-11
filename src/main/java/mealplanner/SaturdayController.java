@@ -15,7 +15,7 @@ import static javafx.scene.paint.Color.GREEN;
 public class SaturdayController extends MondayController{
     public static void switchToSaturdayPage(ActionEvent event) throws IOException {
         // TODO: Switch to home page
-        Parent root = FXMLLoader.load(Objects.requireNonNull(MondayController.class.getResource("saturday.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(MondayController.class.getResource("/main/mealplanner/saturday.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

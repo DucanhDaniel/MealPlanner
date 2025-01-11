@@ -58,6 +58,7 @@ public class GetRecipesByName {
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
+            System.out.println("ádasdasdasdasd");
         }
         webClient.close();
         return recipeList;

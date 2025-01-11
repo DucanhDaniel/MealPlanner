@@ -131,7 +131,7 @@ public class SearchRecipesController extends HomePageController{
             @Override
             public void handle(ActionEvent e) {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("recipe_show.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/mealplanner/recipe_show.fxml"));
                     root = loader.load();
                     RecipeShowController recipeShowController = loader.getController();
                     recipeShowController.setRecipe(recipe);
@@ -149,7 +149,7 @@ public class SearchRecipesController extends HomePageController{
     }
     public static void switchToSearchRecipesPage(ActionEvent event) throws IOException {
         // TODO: Switch to home page
-        Parent root = FXMLLoader.load(Objects.requireNonNull(MondayController.class.getResource("search_recipes.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(MondayController.class.getResource("/main/mealplanner/search_recipes.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

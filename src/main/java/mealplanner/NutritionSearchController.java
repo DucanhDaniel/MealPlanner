@@ -28,7 +28,7 @@ public class NutritionSearchController extends HomePageController{
 
     public static void switchToSearchDishNutritionPage(ActionEvent event) throws IOException {
         // TODO: Switch to search dish nutrition page
-        Parent root = FXMLLoader.load(Objects.requireNonNull(NutritionSearchController.class.getResource("nutrition_search.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(NutritionSearchController.class.getResource("/main/mealplanner/nutrition_search.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -12,7 +12,10 @@ import java.util.Objects;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home_page.fxml")));
+
+
+        // Nếu tệp tồn tại thì tải nó
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/main/mealplanner/home_page.fxml")));
 
         stage.setScene(new Scene(root));
         stage.show();

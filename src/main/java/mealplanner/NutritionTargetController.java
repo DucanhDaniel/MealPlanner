@@ -51,7 +51,7 @@ public class NutritionTargetController extends HomePageController  {
         fatLabel.setText(fats + "");
     }
     public static void switchToNutritionTargetPage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(NutritionTargetController.class.getResource("nutrition_target.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(NutritionTargetController.class.getResource("/main/mealplanner/nutrition_target.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

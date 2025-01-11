@@ -46,7 +46,7 @@ public class RecipeShowController extends HomePageController {
 
     public static void switchToRecipeShowPage(ActionEvent event) throws IOException {
         // TODO: Switch to recipe show page
-        Parent root = FXMLLoader.load(Objects.requireNonNull(RecipeShowController.class.getResource("recipe_show.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(RecipeShowController.class.getResource("/main/mealplanner/recipe_show.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
